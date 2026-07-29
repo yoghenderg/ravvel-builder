@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="Ravvel Builder Construction">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#DC2626"/>
+      <stop offset="100%" stop-color="#991B1B"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" rx="220" fill="url(#g)"/>
+  <path d="M216 734c90-84 180-168 292-168h300v96H508c-81 0-162 48-292 168z" fill="#FEE2E2" opacity=".28"/>
+  <rect x="258" y="246" width="508" height="532" rx="84" fill="#fff" opacity=".98"/>
+  <rect x="326" y="314" width="94" height="94" rx="18" fill="#DC2626"/>
+  <rect x="326" y="444" width="94" height="94" rx="18" fill="#DC2626"/>
+  <rect x="326" y="574" width="94" height="94" rx="18" fill="#DC2626"/>
+  <rect x="460" y="314" width="94" height="94" rx="18" fill="#DC2626"/>
+  <rect x="460" y="444" width="94" height="94" rx="18" fill="#DC2626"/>
+  <rect x="460" y="574" width="94" height="94" rx="18" fill="#DC2626"/>
+  <rect x="594" y="314" width="94" height="94" rx="18" fill="#DC2626"/>
+  <rect x="594" y="444" width="94" height="94" rx="18" fill="#DC2626"/>
+  <rect x="594" y="574" width="94" height="94" rx="18" fill="#DC2626"/>
+  <path d="M248 300h528" stroke="#7F1D1D" stroke-width="22" stroke-linecap="round" opacity=".22"/>
+  <text x="512" y="892" text-anchor="middle" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="170" font-weight="900" letter-spacing="14">RB</text>
+</svg>

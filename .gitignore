@@ -1,0 +1,11 @@
+.DS_Store
+**/.DS_Store
+.venv/
+.tmp-pdf-pages/
+tmp/
+*.log
+node_modules/
+dist/
+.next/
+.wrangler/
+.vinext/
