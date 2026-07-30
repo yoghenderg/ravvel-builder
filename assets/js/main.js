@@ -1,3 +1,30 @@
+const syncViewportHeight = () => {
+    const viewportHeight = window.visualViewport?.height || window.innerHeight;
+    document.documentElement.style.setProperty("--app-vh", `${viewportHeight * 0.01}px`);
+};
+
+syncViewportHeight();
+
+window.addEventListener("load", () => {
+    syncViewportHeight();
+    window.requestAnimationFrame(syncViewportHeight);
+});
+
+window.addEventListener("pageshow", () => {
+    document.body.classList.remove("mobile-nav-open", "modal-open");
+    document.documentElement.classList.remove("modal-lock");
+    document.body.style.overflow = "";
+    document.documentElement.style.overflow = "";
+    syncViewportHeight();
+    window.requestAnimationFrame(syncViewportHeight);
+});
+
+window.addEventListener("resize", syncViewportHeight);
+window.addEventListener("orientationchange", () => {
+    window.setTimeout(syncViewportHeight, 250);
+});
+window.visualViewport?.addEventListener("resize", syncViewportHeight);
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
