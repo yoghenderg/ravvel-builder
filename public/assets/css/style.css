@@ -515,7 +515,7 @@ body.mobile-nav-open .mobile-nav-panel {
 
     .client-logo-track {
         --client-logo-gap: 0.65rem;
-        --client-logo-duration: 90s;
+        --client-logo-duration: 150s;
     }
 
     .client-logo-card {
