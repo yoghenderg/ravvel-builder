@@ -45,6 +45,33 @@ window.addEventListener("orientationchange", () => {
 });
 window.visualViewport?.addEventListener("resize", syncViewportHeight);
 
+const backToTopButton = document.querySelector(".back-to-top-button");
+const servicesSection = document.getElementById("services");
+
+if (backToTopButton && servicesSection) {
+    const desktopQuery = window.matchMedia("(min-width: 768px)");
+
+    const updateBackToTopVisibility = () => {
+        const servicesTop = servicesSection.offsetTop;
+        const shouldShow = desktopQuery.matches && window.scrollY >= servicesTop - 24;
+        backToTopButton.classList.toggle("back-to-top-button-visible", shouldShow);
+        backToTopButton.setAttribute("aria-hidden", shouldShow ? "false" : "true");
+        backToTopButton.tabIndex = shouldShow ? 0 : -1;
+    };
+
+    backToTopButton.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
+        });
+    });
+
+    window.addEventListener("scroll", updateBackToTopVisibility, { passive: true });
+    window.addEventListener("resize", updateBackToTopVisibility);
+    desktopQuery.addEventListener?.("change", updateBackToTopVisibility);
+    updateBackToTopVisibility();
+}
+
 const setupLazyImageEffects = () => {
     const lazyImages = document.querySelectorAll('img[loading="lazy"]:not(.hero-bg-slide):not(.client-logo-image)');
 
