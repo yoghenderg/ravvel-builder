@@ -46,7 +46,7 @@ window.addEventListener("orientationchange", () => {
 window.visualViewport?.addEventListener("resize", syncViewportHeight);
 
 const setupLazyImageEffects = () => {
-    const lazyImages = document.querySelectorAll('img[loading="lazy"]:not(.hero-bg-slide)');
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]:not(.hero-bg-slide):not(.client-logo-image)');
 
     lazyImages.forEach((img) => {
         if (img.hasAttribute("data-lazy-media")) {

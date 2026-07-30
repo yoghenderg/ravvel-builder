@@ -459,11 +459,14 @@ body.mobile-nav-open .mobile-nav-panel {
 }
 
 .client-logo-track {
+    --client-logo-gap: 1rem;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: var(--client-logo-gap);
     width: max-content;
     animation: client-logo-scroll 60s linear infinite;
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
 }
 
 .client-logo-card {
@@ -510,7 +513,7 @@ body.mobile-nav-open .mobile-nav-panel {
     }
 
     .client-logo-track {
-        gap: 0.65rem;
+        --client-logo-gap: 0.65rem;
     }
 
     .client-logo-card {
@@ -527,7 +530,7 @@ body.mobile-nav-open .mobile-nav-panel {
     }
 
     to {
-        transform: translateX(calc(-50% - 0.5rem));
+        transform: translate3d(calc(-50% - (var(--client-logo-gap) / 2)), 0, 0);
     }
 }
 
@@ -1391,7 +1394,7 @@ html.modal-lock {
     scroll-behavior: auto;
 }
 
-img[loading="lazy"]:not(.hero-bg-slide),
+img[loading="lazy"]:not(.hero-bg-slide):not(.client-logo-image),
 .lazy-media {
     color: transparent;
     opacity: 0;
@@ -1399,7 +1402,7 @@ img[loading="lazy"]:not(.hero-bg-slide),
     transition: opacity 0.5s ease, filter 0.5s ease;
 }
 
-img[loading="lazy"]:not(.hero-bg-slide).lazy-media-loaded,
+img[loading="lazy"]:not(.hero-bg-slide):not(.client-logo-image).lazy-media-loaded,
 .lazy-media.lazy-media-loaded {
     opacity: 1;
     filter: none;
