@@ -5,9 +5,27 @@ const syncViewportHeight = () => {
 
 syncViewportHeight();
 
+const isDesktopHomePage = () => document.body.classList.contains("home-page") && window.matchMedia("(min-width: 768px)").matches;
+
+const resetDesktopHomeScroll = () => {
+    if (!isDesktopHomePage()) {
+        return;
+    }
+
+    if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+    }
+
+    window.scrollTo(0, 0);
+};
+
+resetDesktopHomeScroll();
+
 window.addEventListener("load", () => {
     syncViewportHeight();
     window.requestAnimationFrame(syncViewportHeight);
+    resetDesktopHomeScroll();
+    window.requestAnimationFrame(resetDesktopHomeScroll);
 });
 
 window.addEventListener("pageshow", () => {
@@ -17,6 +35,8 @@ window.addEventListener("pageshow", () => {
     document.documentElement.style.overflow = "";
     syncViewportHeight();
     window.requestAnimationFrame(syncViewportHeight);
+    resetDesktopHomeScroll();
+    window.requestAnimationFrame(resetDesktopHomeScroll);
 });
 
 window.addEventListener("resize", syncViewportHeight);
