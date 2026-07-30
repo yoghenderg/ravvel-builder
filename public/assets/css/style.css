@@ -330,6 +330,10 @@ body.mobile-nav-open .mobile-nav-panel {
     .about-background-hero {
         min-height: 9.3rem !important;
     }
+
+    .team-hero-banner {
+        min-height: 11.5rem !important;
+    }
 }
 
 @media (min-width: 768px) {
