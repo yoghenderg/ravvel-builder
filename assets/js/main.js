@@ -45,6 +45,42 @@ window.addEventListener("orientationchange", () => {
 });
 window.visualViewport?.addEventListener("resize", syncViewportHeight);
 
+const setupLazyImageEffects = () => {
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]:not(.hero-bg-slide)');
+
+    lazyImages.forEach((img) => {
+        if (img.hasAttribute("data-lazy-media")) {
+            return;
+        }
+
+        img.classList.add("lazy-media");
+        img.setAttribute("data-lazy-media", "");
+
+        const parent = img.parentElement;
+        if (parent) {
+            parent.classList.add("lazy-media-shell");
+        }
+
+        const markLoaded = () => {
+            img.classList.add("lazy-media-loaded");
+            parent?.classList.add("lazy-media-shell-loaded");
+        };
+
+        if (img.complete && img.naturalWidth > 0) {
+            markLoaded();
+            return;
+        }
+
+        img.addEventListener("load", markLoaded, { once: true });
+        img.addEventListener("error", markLoaded, { once: true });
+    });
+};
+
+setupLazyImageEffects();
+
+const lazyImageObserver = new MutationObserver(setupLazyImageEffects);
+lazyImageObserver.observe(document.body, { childList: true, subtree: true });
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {

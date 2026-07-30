@@ -1390,3 +1390,47 @@ body.modal-open {
 html.modal-lock {
     scroll-behavior: auto;
 }
+
+img[loading="lazy"]:not(.hero-bg-slide),
+.lazy-media {
+    color: transparent;
+    opacity: 0;
+    filter: blur(10px) saturate(0.9);
+    transition: opacity 0.5s ease, filter 0.5s ease;
+}
+
+img[loading="lazy"]:not(.hero-bg-slide).lazy-media-loaded,
+.lazy-media.lazy-media-loaded {
+    opacity: 1;
+    filter: none;
+}
+
+.lazy-media-shell {
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(241, 245, 249, 0.75);
+}
+
+.lazy-media-shell::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 1;
+    background:
+        linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.44) 48%, transparent 100%),
+        linear-gradient(135deg, rgba(148, 163, 184, 0.14), rgba(241, 245, 249, 0.5));
+    background-size: 220% 100%, 100% 100%;
+    animation: lazy-media-shimmer 1.6s ease-in-out infinite;
+    transition: opacity 0.4s ease;
+}
+
+.lazy-media-shell-loaded::before {
+    opacity: 0;
+}
+
+@keyframes lazy-media-shimmer {
+    0% { background-position: 120% 0, 0 0; }
+    100% { background-position: -120% 0, 0 0; }
+}
