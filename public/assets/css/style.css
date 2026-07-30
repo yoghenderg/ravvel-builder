@@ -832,9 +832,15 @@ body.mobile-nav-open .mobile-nav-panel {
     opacity: 1;
     z-index: 0;
 }
-.hero-premium > *:not(.mobile-nav-drawer) {
+.hero-premium > *:not(.mobile-nav-drawer):not(.hero-bg-layer) {
     position: relative;
     z-index: 1;
+}
+
+.hero-bg-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
 }
 .hero-premium .hero-copy,
 .hero-premium .hero-visual {
