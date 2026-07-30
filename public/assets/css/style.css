@@ -832,7 +832,7 @@ body.mobile-nav-open .mobile-nav-panel {
     opacity: 1;
     z-index: 0;
 }
-.hero-premium > * {
+.hero-premium > *:not(.mobile-nav-drawer) {
     position: relative;
     z-index: 1;
 }
