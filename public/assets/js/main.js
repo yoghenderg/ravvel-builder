@@ -524,19 +524,32 @@ const modalGalleryTitle = document.getElementById("modalGalleryTitle");
 
 if (galleryModal && modalGallery && galleryItems.length > 0) {
     const galleryPanel = galleryModal.querySelector(".modal-panel");
+    const galleryScrollPanel = galleryModal.querySelector(".modal-panel-scroll");
+    let galleryCloseTimer;
 
     const resetGalleryScrollPosition = () => {
         const scrollTargets = [
             galleryModal,
             galleryPanel,
+            galleryScrollPanel,
             modalGallery,
             ...galleryModal.querySelectorAll(".modal-panel-scroll, .project-gallery-stack, .project-gallery-grid")
         ].filter(Boolean);
 
         scrollTargets.forEach(target => {
+            if (typeof target.scrollTo === "function") {
+                target.scrollTo({ top: 0, left: 0, behavior: "instant" });
+            }
             target.scrollTop = 0;
             target.scrollLeft = 0;
         });
+    };
+
+    const resetGalleryScrollCompletely = () => {
+        resetGalleryScrollPosition();
+        requestAnimationFrame(resetGalleryScrollPosition);
+        window.setTimeout(resetGalleryScrollPosition, 0);
+        window.setTimeout(resetGalleryScrollPosition, 120);
     };
 
     const lockGalleryScroll = () => {
@@ -550,23 +563,26 @@ if (galleryModal && modalGallery && galleryItems.length > 0) {
     };
 
     const closeGalleryModal = () => {
-        resetGalleryScrollPosition();
+        window.clearTimeout(galleryCloseTimer);
+        resetGalleryScrollCompletely();
         galleryModal.classList.add("opacity-0");
         galleryPanel?.classList.add("scale-95");
-        window.setTimeout(() => {
+        galleryCloseTimer = window.setTimeout(() => {
             galleryModal.classList.add("hidden");
             galleryModal.classList.remove("flex");
             modalGallery.innerHTML = "";
             if (modalGalleryTitle) {
                 modalGalleryTitle.textContent = "Project Gallery";
             }
-            resetGalleryScrollPosition();
+            resetGalleryScrollCompletely();
             unlockGalleryScroll();
         }, 300);
     };
 
     galleryItems.forEach(item => {
         item.addEventListener("click", () => {
+            window.clearTimeout(galleryCloseTimer);
+            resetGalleryScrollCompletely();
             const project = item.dataset.project;
             const projectEntry = projectImages[project] || [];
             const projectTitle = item.querySelector("h3")?.textContent?.trim()
@@ -634,11 +650,11 @@ if (galleryModal && modalGallery && galleryItems.length > 0) {
 
             galleryModal.classList.remove("hidden");
             galleryModal.classList.add("flex");
-            resetGalleryScrollPosition();
+            resetGalleryScrollCompletely();
 
             // Animate fade/zoom in
             requestAnimationFrame(() => {
-                resetGalleryScrollPosition();
+                resetGalleryScrollCompletely();
                 galleryModal.classList.remove("opacity-0");
                 galleryPanel?.classList.remove("scale-95");
             });
