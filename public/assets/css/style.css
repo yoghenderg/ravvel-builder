@@ -103,7 +103,18 @@ section, footer {
 }
 
 .section-watermark {
-    display: none;
+    position: absolute;
+    left: clamp(0.9rem, 2vw, 2rem);
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+    font-size: clamp(1.25rem, 2.3vw, 2rem);
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    opacity: 0.06;
+    line-height: 1;
 }
 
 .section-watermark-bottom {
@@ -577,11 +588,20 @@ body.mobile-nav-open .mobile-nav-panel {
     transform: none;
 }
 
+.about-feature-card {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
 .about-feature-icon {
+    background: rgba(255, 255, 255, 0.3);
     transition: background-color 0.45s ease, box-shadow 0.45s ease, transform 0.45s ease;
 }
 
 .about-feature-icon svg {
+    color: #ffffff;
     transition: color 0.45s ease, filter 0.45s ease, transform 0.45s ease;
 }
 
