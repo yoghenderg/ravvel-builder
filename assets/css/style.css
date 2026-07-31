@@ -103,18 +103,7 @@ section, footer {
 }
 
 .section-watermark {
-    position: absolute;
-    left: clamp(0.9rem, 2vw, 2rem);
-    z-index: 0;
-    pointer-events: none;
-    user-select: none;
-    font-size: clamp(1.25rem, 2.3vw, 2rem);
-    font-weight: 800;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    white-space: nowrap;
-    opacity: 0.06;
-    line-height: 1;
+    display: none;
 }
 
 .section-watermark-bottom {
@@ -1074,9 +1063,9 @@ body.mobile-nav-open .mobile-nav-panel {
     }
 
     .hero-title {
-        max-width: 21rem;
-        font-size: clamp(2.45rem, 12vw, 3.25rem);
-        line-height: 0.96;
+        max-width: 18rem;
+        font-size: clamp(2rem, 9.5vw, 2.55rem);
+        line-height: 1;
     }
 
     .hero-bottom-actions.absolute {

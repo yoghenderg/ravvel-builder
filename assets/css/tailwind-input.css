@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@source "../../index.html";
+@source "../../about.html";
+@source "../../app/static/index.html";
+@source "../../app/static/about.html";
+
+@theme {
+  --color-primary: #dc2626;
+  --color-secondary: #b91c1c;
+  --color-accent: #ececec;
+  --font-sans: Inter, system-ui, sans-serif;
+}
