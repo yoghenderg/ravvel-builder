@@ -678,7 +678,6 @@ body.mobile-nav-open .mobile-nav-panel {
 
 .about-feature-icon {
     background: rgba(255, 255, 255, 0.3);
-    transition: background-color 0.45s ease, box-shadow 0.45s ease, transform 0.45s ease;
 }
 
 .about-feature-icon svg {
@@ -687,17 +686,16 @@ body.mobile-nav-open .mobile-nav-panel {
 }
 
 .about-feature-card:hover .about-feature-icon {
-    background-color: rgba(153, 27, 27, 0.16);
-    box-shadow:
-        0 0 0 1px rgba(153, 27, 27, 0.14),
-        0 0 18px rgba(153, 27, 27, 0.18),
-        0 0 36px rgba(153, 27, 27, 0.12);
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: none;
 }
 
 .about-feature-card:hover .about-feature-icon svg {
     color: #991b1b;
-    filter: drop-shadow(0 0 8px rgba(153, 27, 27, 0.26));
-    transform: scale(1.04);
+    filter:
+        drop-shadow(0 0 8px rgba(153, 27, 27, 0.34))
+        drop-shadow(0 0 18px rgba(153, 27, 27, 0.2));
+    transform: scale(1.06);
 }
 
 .team-member-portrait {
