@@ -977,8 +977,24 @@ body.mobile-nav-open .mobile-nav-panel {
     letter-spacing: 0.02em;
     text-shadow: none;
 }
+.about-banner-title-outline {
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0.032em rgba(255, 255, 255, 0.96);
+    text-stroke: 0.032em rgba(255, 255, 255, 0.96);
+    letter-spacing: 0.005em;
+    text-shadow: none;
+}
 @supports not (-webkit-text-stroke: 1px #fff) {
     .hero-title-outline {
+        color: rgba(255, 255, 255, 0.08);
+        text-shadow:
+            1px 0 rgba(255, 255, 255, 0.96),
+            -1px 0 rgba(255, 255, 255, 0.96),
+            0 1px rgba(255, 255, 255, 0.96),
+            0 -1px rgba(255, 255, 255, 0.96);
+    }
+    .about-banner-title-outline {
         color: rgba(255, 255, 255, 0.08);
         text-shadow:
             1px 0 rgba(255, 255, 255, 0.96),
