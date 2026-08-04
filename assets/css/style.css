@@ -969,6 +969,23 @@ body.mobile-nav-open .mobile-nav-panel {
 .hero-title {
     text-shadow: 0 14px 36px rgba(0, 0, 0, 0.58);
 }
+.hero-title-outline {
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0.055em rgba(255, 255, 255, 0.96);
+    text-stroke: 0.055em rgba(255, 255, 255, 0.96);
+    text-shadow: none;
+}
+@supports not (-webkit-text-stroke: 1px #fff) {
+    .hero-title-outline {
+        color: rgba(255, 255, 255, 0.08);
+        text-shadow:
+            1px 0 rgba(255, 255, 255, 0.96),
+            -1px 0 rgba(255, 255, 255, 0.96),
+            0 1px rgba(255, 255, 255, 0.96),
+            0 -1px rgba(255, 255, 255, 0.96);
+    }
+}
 .hero-bg-rotator {
     position: absolute;
     inset: 0;
