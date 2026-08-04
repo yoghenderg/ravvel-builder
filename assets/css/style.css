@@ -933,7 +933,7 @@ body.mobile-nav-open .mobile-nav-panel {
     transform: scale(1.08);
     opacity: 0;
     z-index: 0;
-    filter: saturate(0.98) contrast(1.06) brightness(0.84);
+    filter: saturate(0.98) contrast(1.06);
     transition: opacity 5s ease, transform 5s ease;
     will-change: opacity, transform;
     pointer-events: none;
@@ -965,7 +965,7 @@ body.mobile-nav-open .mobile-nav-panel {
     .hero-bg-slide {
         transition: none;
         transform: none;
-        filter: saturate(0.98) contrast(1.06) brightness(0.84);
+        filter: saturate(0.98) contrast(1.06);
     }
 
     .hero-bg-slide:not(:first-child) {
