@@ -551,6 +551,11 @@ body.mobile-nav-open .mobile-nav-panel {
     transition: box-shadow 0.28s ease, background 0.28s ease, border-color 0.28s ease;
 }
 
+.contact-info-glass-card-office {
+    flex: 1.18 1 0%;
+    padding-block: clamp(1.12rem, 2.45vw, 1.4rem);
+}
+
 .contact-info-content {
     display: flex;
     min-width: 0;
