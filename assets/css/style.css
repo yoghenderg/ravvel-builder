@@ -972,8 +972,9 @@ body.mobile-nav-open .mobile-nav-panel {
 .hero-title-outline {
     color: transparent;
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 0.055em rgba(255, 255, 255, 0.96);
-    text-stroke: 0.055em rgba(255, 255, 255, 0.96);
+    -webkit-text-stroke: 0.038em rgba(255, 255, 255, 0.96);
+    text-stroke: 0.038em rgba(255, 255, 255, 0.96);
+    letter-spacing: 0.02em;
     text-shadow: none;
 }
 @supports not (-webkit-text-stroke: 1px #fff) {
