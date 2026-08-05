@@ -493,7 +493,7 @@ body.mobile-nav-open .mobile-nav-panel {
 }
 
 .client-logo-track {
-    --client-logo-gap: 1.5rem;
+    --client-logo-gap: 1rem;
     --client-logo-duration: 60s;
     display: flex;
     align-items: center;
@@ -610,7 +610,7 @@ body.mobile-nav-open .mobile-nav-panel {
     }
 
     .client-logo-track {
-        --client-logo-gap: 1rem;
+        --client-logo-gap: 0.65rem;
         --client-logo-duration: 48s;
     }
 
