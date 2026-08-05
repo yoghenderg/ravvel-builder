@@ -1085,6 +1085,15 @@ body.mobile-nav-open .mobile-nav-panel {
 .hero-cta-primary:hover {
     box-shadow: 0 24px 50px rgba(127, 29, 29, 0.42);
 }
+.hero-cta-whatsapp {
+    color: #ffffff;
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    border: 1px solid rgba(220, 255, 235, 0.3);
+    box-shadow: 0 20px 40px rgba(18, 140, 126, 0.28);
+}
+.hero-cta-whatsapp:hover {
+    box-shadow: 0 24px 50px rgba(18, 140, 126, 0.36);
+}
 .hero-cta-secondary {
     color: #ffffff;
     background: rgba(127, 29, 29, 0.18);
