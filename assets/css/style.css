@@ -493,7 +493,7 @@ body.mobile-nav-open .mobile-nav-panel {
 }
 
 .client-logo-track {
-    --client-logo-gap: 1rem;
+    --client-logo-gap: 2.5rem;
     --client-logo-duration: 60s;
     display: flex;
     align-items: center;
@@ -507,30 +507,32 @@ body.mobile-nav-open .mobile-nav-panel {
 .client-logo-card {
     flex: 0 0 clamp(10rem, 14vw, 12rem);
     height: clamp(5.5rem, 8vw, 6.5rem);
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 1rem;
     overflow: hidden;
+    isolation: isolate;
+    contain: paint;
     border-radius: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.34);
-    background: rgba(255, 255, 255, 0.16);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    background: rgba(255, 255, 255, 0.24);
+    background-clip: padding-box;
     box-shadow:
-        0 16px 24px rgba(15, 23, 42, 0.06),
-        0 6px 14px rgba(15, 23, 42, 0.04),
+        0 8px 16px rgba(15, 23, 42, 0.035),
+        0 3px 8px rgba(15, 23, 42, 0.025),
         0 1px 0 rgba(255, 255, 255, 0.22) inset,
         0 -1px 0 rgba(255, 255, 255, 0.08) inset;
     transition: box-shadow 0.28s ease, background 0.28s ease, border-color 0.28s ease;
 }
 
 .client-logo-card:hover {
-    background: rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.26);
     border-color: rgba(255, 255, 255, 0.34);
     box-shadow:
-        0 14px 22px rgba(15, 23, 42, 0.065),
-        0 5px 12px rgba(15, 23, 42, 0.04),
+        0 8px 14px rgba(15, 23, 42, 0.04),
+        0 3px 8px rgba(15, 23, 42, 0.025),
         0 1px 0 rgba(255, 255, 255, 0.22) inset,
         0 -1px 0 rgba(255, 255, 255, 0.08) inset;
 }
@@ -599,7 +601,7 @@ body.mobile-nav-open .mobile-nav-panel {
     }
 
     .client-logo-track {
-        --client-logo-gap: 0.65rem;
+        --client-logo-gap: 1.5rem;
         --client-logo-duration: 150s;
     }
 
