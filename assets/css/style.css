@@ -497,19 +497,11 @@ body.mobile-nav-open .mobile-nav-panel {
     --client-logo-duration: 60s;
     display: flex;
     align-items: center;
-    gap: 0;
+    gap: var(--client-logo-gap);
     width: max-content;
     animation: client-logo-scroll var(--client-logo-duration) linear infinite;
     transform: translate3d(0, 0, 0);
     will-change: transform;
-}
-
-.client-logo-set {
-    display: flex;
-    flex: 0 0 auto;
-    align-items: center;
-    gap: var(--client-logo-gap);
-    padding-right: var(--client-logo-gap);
 }
 
 .client-logo-card {
@@ -608,7 +600,7 @@ body.mobile-nav-open .mobile-nav-panel {
 
     .client-logo-track {
         --client-logo-gap: 0.65rem;
-        --client-logo-duration: 48s;
+        --client-logo-duration: 150s;
     }
 
     .client-logo-card {
@@ -625,7 +617,7 @@ body.mobile-nav-open .mobile-nav-panel {
     }
 
     to {
-        transform: translate3d(-50%, 0, 0);
+        transform: translate3d(calc(-50% - (var(--client-logo-gap) / 2)), 0, 0);
     }
 }
 
